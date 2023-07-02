@@ -1,12 +1,13 @@
 <script>
   // third party modules
   import {v4 as uuid} from 'uuid';
+  import { afterUpdate } from 'svelte';
 
   // local modules
   import './app.css';
   import TodoInput from './components/todo-input.svelte';
   import TodoList from './components/todo-list.svelte';
-  import { afterUpdate } from 'svelte';
+  // import TodoReport from './components/todo-report.svelte';
 
   $:todoList = [];
   $:todoError = '';
@@ -68,15 +69,15 @@
     }
   });
   
-  $:totalTodo = todoList?.length;
-  $:totalCompletedTodo = todoList?.filter(todo => todo?.isCompleted)?.length;
-  $:totalIncompleteTodo = todoList?.filter(todo => !todo?.isCompleted)?.length;
+  // $:totalTodo = todoList?.length;
+  // $:totalCompletedTodo = todoList?.filter(todo => todo?.isCompleted)?.length;
+  // $:totalIncompleteTodo = todoList?.filter(todo => !todo?.isCompleted)?.length;
 
-  $:console.log("todoList", todoList);
+  // $:console.log("todoList", todoList);
 
 </script>
 
-<main class="container mx-auto">
+<main class="container relative mx-auto">
   <div class="flex items-center justify-center h-full py-4">
     <h1 class="text-5xl font-bold text-teal-500">
       Svelte Todo App
